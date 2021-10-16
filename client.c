@@ -29,14 +29,19 @@ int main(int argc, char const *argv[])
 		return -1;
 	}
 
+	/*The connect() system call connects the socket referred to by the file descriptor sockfd 
+	to the address specified by addr. Server’s address and port is specified in addr.*/
 	if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
 	{
-		printf("\nConnection Failed \n");
+		printf("\nclient> connection failed !!!\n");
 		return -1;
 	}
+	// send
 	send(sock , hello , strlen(hello) , 0 );
-	printf("Hello message sent\n");
+	printf("client> message sent to server\n");
+	// read
 	valread = read( sock , buffer, 1024);
-	printf("%s\n",buffer );
+	printf("client> read message from server %s\n",buffer );
+	
 	return 0;
 }
