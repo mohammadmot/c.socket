@@ -95,7 +95,7 @@ int main(int argc, char const *argv[])
 		perror("bind failed");
 		exit(EXIT_FAILURE);
 	}
-	printf("server> specified ip and port to socket[%i:%i]\n", address.sin_addr.s_addr, PORT);
+	printf("server> specified ip and port to socket [%i:%i]\n", address.sin_addr.s_addr, PORT);
 
 	/*
 	It puts the server socket in a passive mode, where it waits for the client to approach

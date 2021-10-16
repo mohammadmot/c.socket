@@ -41,7 +41,7 @@ int main(int argc, char const *argv[])
 	printf("client> message sent to server\n");
 	// read
 	valread = read( sock , buffer, 1024);
-	printf("client> read message from server %s\n",buffer );
+	printf("client> read message from server: %s\n",buffer );
 	
 	return 0;
 }
